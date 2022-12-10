@@ -12,7 +12,7 @@ namespace VendorOrder.Test
     [TestMethod]
     public void OrderConstructor_CreatedInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test", "test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "test");
 
       //Act
       string result = newOrder.Title;
@@ -35,7 +35,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title);
+      Order newOrder = new Order(title, "test");
 
       //Act
       string updatedTitle = "Becky's Cafe";
@@ -50,7 +50,7 @@ namespace VendorOrder.Test
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "Ten Cookies";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("test", description);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }

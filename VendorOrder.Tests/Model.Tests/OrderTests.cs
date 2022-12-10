@@ -94,5 +94,16 @@ namespace VendorOrder.Test
       string result = newOrder.Date;
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_SetDate_String()
+    {
+      string date = "12/10/2022";
+      Order newOrder = new Order("test", "test", 1, date);
+      string updatedDate = "12/20/2022";
+      newOrder.Date = updatedDate;
+      string result = newOrder.Date;
+      Assert.AreEqual(updatedDate, result);
+    }
   }
 }

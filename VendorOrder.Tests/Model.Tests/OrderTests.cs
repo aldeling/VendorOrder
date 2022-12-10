@@ -54,5 +54,16 @@ namespace VendorOrder.Test
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "Ten Cookies";
+      Order newOrder = new Order("test", description);
+      string updatedDescription = "Five Cakes";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }

@@ -67,12 +67,23 @@ namespace VendorOrder.Test
     }
 
     [TestMethod]
-    public void GetPrice_ReturnsPrice_String()
+    public void GetPrice_ReturnsPrice_Int()
     {
       int price = 10;
       Order newOrder = new Order("test", "test", price);
       int result = newOrder.Price;
       Assert.AreEqual(price, result);
+    }
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Int()
+    {
+      int price = 10;
+      Order newOrder = new Order("test", "test", price);
+      int updatedPrice = 20;
+      newOrder.Price = updatedPrice;
+      int result = newOrder.Price;
+      Assert.AreEqual(updatedPrice, result);
     }
   }
 }

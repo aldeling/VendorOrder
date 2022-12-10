@@ -45,5 +45,14 @@ namespace VendorOrder.Test
       //Assert
       Assert.AreEqual(updatedTitle, result);
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "Ten Cookies";
+      Order newOrder = new Order(description);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
+    }
   }
 }

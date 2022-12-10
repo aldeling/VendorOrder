@@ -29,5 +29,21 @@ namespace VendorOrder.Test
       //Assert
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "Suzie's Cafe";
+      Order newOrder = new Order(title);
+
+      //Act
+      string updatedTitle = "Becky's Cafe";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
+    }
   }
 }

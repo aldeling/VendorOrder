@@ -12,7 +12,7 @@ namespace VendorOrder.Test
     [TestMethod]
     public void OrderConstructor_CreatedInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "test", 1);
+      Order newOrder = new Order("test", "test", 1, "test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title, "test", 1);
+      Order newOrder = new Order(title, "test", 1, "test");
 
       //Act
       string result = newOrder.Title;
@@ -35,7 +35,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title, "test", 1);
+      Order newOrder = new Order(title, "test", 1, "test");
 
       //Act
       string updatedTitle = "Becky's Cafe";
@@ -50,7 +50,7 @@ namespace VendorOrder.Test
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "Ten Cookies";
-      Order newOrder = new Order("test", description, 1);
+      Order newOrder = new Order("test", description, 1, "test");
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -59,7 +59,7 @@ namespace VendorOrder.Test
     public void SetDescription_SetDescription_String()
     {
       string description = "Ten Cookies";
-      Order newOrder = new Order("test", description, 1);
+      Order newOrder = new Order("test", description, 1, "test");
       string updatedDescription = "Five Cakes";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
@@ -70,7 +70,7 @@ namespace VendorOrder.Test
     public void GetPrice_ReturnsPrice_Int()
     {
       int price = 10;
-      Order newOrder = new Order("test", "test", price);
+      Order newOrder = new Order("test", "test", price, "test");
       int result = newOrder.Price;
       Assert.AreEqual(price, result);
     }
@@ -79,11 +79,20 @@ namespace VendorOrder.Test
     public void SetPrice_SetPrice_Int()
     {
       int price = 10;
-      Order newOrder = new Order("test", "test", price);
+      Order newOrder = new Order("test", "test", price, "test");
       int updatedPrice = 20;
       newOrder.Price = updatedPrice;
       int result = newOrder.Price;
       Assert.AreEqual(updatedPrice, result);
+    }
+
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      string date = "12/10/2022";
+      Order newOrder = new Order("test", "test", 1, date);
+      string result = newOrder.Date;
+      Assert.AreEqual(date, result);
     }
   }
 }

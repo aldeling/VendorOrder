@@ -12,7 +12,7 @@ namespace VendorOrder.Test
     [TestMethod]
     public void OrderConstructor_CreatedInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "test");
+      Order newOrder = new Order("test", "test", 1);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title, "test");
+      Order newOrder = new Order(title, "test", 1);
 
       //Act
       string result = newOrder.Title;
@@ -35,7 +35,7 @@ namespace VendorOrder.Test
     {
       //Arrange
       string title = "Suzie's Cafe";
-      Order newOrder = new Order(title, "test");
+      Order newOrder = new Order(title, "test", 1);
 
       //Act
       string updatedTitle = "Becky's Cafe";
@@ -50,7 +50,7 @@ namespace VendorOrder.Test
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "Ten Cookies";
-      Order newOrder = new Order("test", description);
+      Order newOrder = new Order("test", description, 1);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -59,11 +59,20 @@ namespace VendorOrder.Test
     public void SetDescription_SetDescription_String()
     {
       string description = "Ten Cookies";
-      Order newOrder = new Order("test", description);
+      Order newOrder = new Order("test", description, 1);
       string updatedDescription = "Five Cakes";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
       Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_String()
+    {
+      int price = 10;
+      Order newOrder = new Order("test", "test", price);
+      int result = newOrder.Price;
+      Assert.AreEqual(price, result);
     }
   }
 }

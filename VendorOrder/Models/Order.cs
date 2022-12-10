@@ -4,11 +4,11 @@ namespace VendorOrder.Models
 {
   public class Order
   {
-    public string Title;
+    public string Title { get; }
 
     public Order(string title)
     {
-
+      Title = title;
     }
   }
 }

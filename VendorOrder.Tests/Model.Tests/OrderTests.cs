@@ -12,7 +12,7 @@ namespace VendorOrder.Test
     [TestMethod]
     public void OrderConstructor_CreatedInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order();
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
   }

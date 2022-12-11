@@ -154,5 +154,21 @@ namespace VendorOrder.Test
       //Assert
       Assert.AreEqual(1,result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title1 = "Suzie's Cafe";
+      string title2 = "Becky's Cafe";
+      Order newOrder1 = new Order(title1, "test", 1, "test");
+      Order newOrder2 = new Order(title2, "test", 1, "test");
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }

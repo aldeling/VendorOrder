@@ -123,5 +123,22 @@ namespace VendorOrder.Test
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_ItemList()
+    {
+      //Arrange
+      string title1 = "Suzie's Cafe";
+      string title2 = "Becky's Cafe";
+      Order newOrder1 = new Order(title1, "test", 1, "test");
+      Order newOrder2 = new Order(title2, "test", 1, "test");
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result); 
+    }
   }
 }

@@ -140,5 +140,19 @@ namespace VendorOrder.Test
       //Assert
       CollectionAssert.AreEqual(newList, result); 
     }
+
+    [TestMethod]
+    public void GetId_OrderReturnsWithId_Int()
+    {
+      //Arrange
+      string title = "Suzie's Cafe";
+      Order newOrder = new Order(title, "test", 1, "test");
+
+      //Act
+      int result = newOrder.Id;
+
+      //Assert
+      Assert.AreEqual(1,result);
+    }
   }
 }

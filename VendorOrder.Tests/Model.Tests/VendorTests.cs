@@ -54,5 +54,16 @@ namespace VendorOrder.Tests
       string result = newVendor.Description;
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "Cafe";
+      Vendor newVendor = new Vendor("test", description);
+      string updatedDescription = "Gas Station";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+      Assert.AreEqual(updatedDescription, result);
+    }
   }
 }

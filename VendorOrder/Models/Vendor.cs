@@ -13,11 +13,17 @@ namespace VendorOrder.Models
     {
       Name = name;
       Description = description;
+      _instances.Add(this);
     }
 
     public static List<Vendor> GetAll()
     {
       return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }

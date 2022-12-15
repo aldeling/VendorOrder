@@ -6,8 +6,13 @@ using System;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -71,6 +76,23 @@ namespace VendorOrder.Tests
     {
       //Arrange
       List<Vendor> newList = new List<Vendor> { };
+
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsVendor_VendorList()
+    {
+      //Arrange
+      string name1 = "Suzie's Cafe";
+      string name2 = "Becky's Cafe";
+      Vendor newVendor1 = new Vendor(name1, "test");
+      Vendor newVendor2 = new Vendor(name2, "test");
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
 
       //Act
       List<Vendor> result = Vendor.GetAll();

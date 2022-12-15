@@ -12,7 +12,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test");
+      Vendor newVendor = new Vendor("test", "test");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -21,7 +21,7 @@ namespace VendorOrder.Tests
     {
       //Arrange
       string name = "Suzie's Cafe";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "test");
 
       //Act
       string result = newVendor.Name;
@@ -35,7 +35,7 @@ namespace VendorOrder.Tests
     {
       //Arrange
       string name = "Suzie's Cafe";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "test");
 
       //Act
       string updatedName = "Becky's Cafe";
@@ -44,6 +44,15 @@ namespace VendorOrder.Tests
 
       //Assert
       Assert.AreEqual(updatedName, result);
+    }
+
+    [TestMethod]
+    public void GetVendorDescription_ReturnDescription_String()
+    {
+      string description = "Cafe";
+      Vendor newVendor = new Vendor("test", description);
+      string result = newVendor.Description;
+      Assert.AreEqual(description, result);
     }
   }
 }

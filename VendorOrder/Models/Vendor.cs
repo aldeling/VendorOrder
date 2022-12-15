@@ -5,9 +5,10 @@ namespace VendorOrder.Models
   public class Vendor
   {
     public string Name { get; set; }
+    public string Description { get; }
   
 
-    public Vendor(string name)
+    public Vendor(string name, string description)
     {
       Name = name;
     }

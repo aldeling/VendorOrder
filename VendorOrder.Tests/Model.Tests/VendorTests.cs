@@ -125,7 +125,7 @@ namespace VendorOrder.Tests
       Vendor newVendor2 = new Vendor(name2, "test");
 
       //Act
-      Order result = Order.Find(2);
+      Vendor result = Vendor.Find(2);
 
       //Assert
       Assert.AreEqual(newVendor2, result);

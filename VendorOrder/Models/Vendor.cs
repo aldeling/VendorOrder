@@ -7,7 +7,7 @@ namespace VendorOrder.Models
     public string Name { get; set; }
     public string Description { get; set; }
     private static List<Vendor>_instances = new List<Vendor> {};
-    public int Id;
+    public int Id { get; }
   
 
     public Vendor(string name, string description)
@@ -30,7 +30,7 @@ namespace VendorOrder.Models
 
     public static Vendor Find(int searchId)
     {
-      
+      return _instances[searchId-1];
     }
   }
 }

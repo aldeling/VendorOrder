@@ -27,5 +27,10 @@ namespace VendorOrder.Models
     {
       _instances.Clear();
     }
+
+    public static Vendor Find(int searchId)
+    {
+      
+    }
   }
 }

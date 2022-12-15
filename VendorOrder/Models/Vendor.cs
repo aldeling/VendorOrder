@@ -15,6 +15,7 @@ namespace VendorOrder.Models
       Name = name;
       Description = description;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static List<Vendor> GetAll()
